@@ -9,6 +9,19 @@
 
       <button id="btn2" name = "register_college" type="button">For Colleges</button>
     </div>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+    $("#btn1").click(function () {
+        $.ajax({
+            type: 'GET',
+            url: "/student_register",
+            success: function (data) {
+              $(location).attr('href','http://localhost:8888/student_register');
+            }
+
+          });
+      });
+      </script>
   </body>
 
 </html>
