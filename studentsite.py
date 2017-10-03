@@ -1,21 +1,30 @@
 import tornado.ioloop
 import tornado.web
 import os
-import config
+
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
 
-        self.render('/Users/davidpetullo/Documents/studentscout/home.html')
+        self.render('/Users/jamespetullo/Downloads/studenthost-master/studentscout/home.html')
 
 class StudentRegster(tornado.web.RequestHandler):
     def get(self):
-        self.render("/Users/davidpetullo/Documents/studentscout/student_register.html")
+        self.render("/Users/jamespetullo/Downloads/studenthost-master/studentscout/student_register.html")
 
     def post(self):
-        username = self.get_body_argument("username", default=None, strip=False)
-        password = self.get_body_argument("password", default=None, strip=False)
-        print (username, password)
+        first_name = self.get_argument("first_name")
+        last_name = self.get_argument("last_name")
+        email = self.get_argument("email")
+
+        username = self.get_argument("username")
+        password = self.get_argument("password")
+        headers = ("first_name", "last_name", "email", "username", "password")
+        data = (first_name, last_name, email, username, password)
+        data_dict = dict(zip(headers, data))
+
+
+
 
 def make_app():
     settings = {"static_path": os.path.join(os.path.dirname(__file__), "student_style")}
@@ -32,3 +41,4 @@ if __name__ == "__main__":
 
 #http://localhost:8888
 #Works so far style wise
+
