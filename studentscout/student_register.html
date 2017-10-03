@@ -1,6 +1,6 @@
 <html>
 <div id="login-form">
-                  <form action="" method="post" id="login_form">
+                  <form method="POST" id="login_form">
 
                     <fieldset>
                         <label for="first_name">First Name:</label>
@@ -10,20 +10,25 @@
                         <label for="last_name">Last Name:</label>
                         <input class="text-input" id="lastname" name="last_name" tabindex="2" type="lname" value="">
                     </fieldset>
+                    <fieldset>
+                        <label for="email">Email:</label>
+                        <input class="text-input" id="email" name="email" tabindex="2" type="email" value="">
+                    </fieldset>
 
                       <fieldset>
-                          <label for="username">Username</label>
+                          <label for="username">Username:</label>
                           <input autocapitalize="off" autocorrect="off" class="text-input" id="username" name="username" tabindex="1" type="text" value="">
                       </fieldset>
 
                       <fieldset>
-                          <label for="password">Password</label>
+                          <label for="password">Password:</label>
                           <input class="text-input" id="password" name="password" tabindex="2" type="password" value="">
                       </fieldset>
 
 
+
                       <div id="form_btn">
-                          <button id="button2" name="signup_student" type="button">Sign Up</button>
+                          <input type="submit" value="post" name="Submit"/>
                           <!-- <a href="/sb/"><input id="inscription-btn" class="btn btn-red" value="Inscription" tabindex="3"></a> -->
                       </div>
                   </form>
